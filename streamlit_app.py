@@ -2,4 +2,4 @@ import streamlit
 
 streamlit.title('My Parents New Healthy Diner')
 
-streamlit.title('Breakfast Menu', font-size:20px)
+streamlit.title('Breakfast Menu')'<p 'font-size:20px;" </p>'

@@ -4,6 +4,6 @@ streamlit.title('My Parents New Healthy Diner')
 
 streamlit.header('Breakfast Menu')
 
-streamlit.text('Omega 3 & blueberry Oatmeal'\n)
-streamlit.text('Omega 3 & blueberry Oatmeal'\n)
-streamlit.text('Omega 3 & blueberry Oatmeal'\n)
+streamlit.text('Omega 3 & blueberry Oatmeal\n')
+streamlit.text('Omega 3 & blueberry Oatmeal\n')
+streamlit.text('Omega 3 & blueberry Oatmeal\n')

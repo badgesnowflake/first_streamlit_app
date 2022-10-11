@@ -48,9 +48,7 @@ try:
         # display the result in streamlit
         streamlit.dataframe(back_from_function)
          
-streamlit.stop()
-
-#streamlit.text(fruityvice_response.json())
+streamlit.text(fruityvice_response.json())
 import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()

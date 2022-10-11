@@ -45,8 +45,9 @@ try:
         # display the result in streamlit
         streamlit.dataframe(back_from_function)
          
- except URLError as e:
-     streamlit.error()
+except URLError as e:
+    streamlit.error()
+      
          
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()

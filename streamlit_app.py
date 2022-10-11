@@ -2,8 +2,7 @@ import streamlit
 
 
 
-# don't run anything past here while we troubleshoot
-streamlit.stop()
+
 
 import snowflake.connector
 
@@ -44,8 +43,8 @@ streamlit.write('The user entered ', fruit_choice)
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # display the result in streamlit
 streamlit.dataframe(fruityvice_normalized)
-
-
+# don't run anything past here while we troubleshoot
+streamlit.stop()
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 # my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")

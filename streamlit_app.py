@@ -3,7 +3,7 @@ import streamlit
 import pandas
 import requests
 
-import snowflake.connector
+
 
 from urllib.error import URLError
 
@@ -47,13 +47,14 @@ try:
         back_from_function = get_fruityvice_data(fruit_choice)
         # display the result in streamlit
         streamlit.dataframe(back_from_function)
+         
+streamlit.stop()
 
-    
-    
 #streamlit.text(fruityvice_response.json())
-
+import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
+
 # my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_cur.execute("SELECT * from fruit_load_list")
 

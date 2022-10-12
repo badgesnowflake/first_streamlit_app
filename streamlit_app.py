@@ -14,7 +14,6 @@ streamlit.text('🥑 🍞 Avocado Toast')
 
 streamlit.header('🍌🍓 Buld Your Own Fruit Snoothie🥝🍇')
 
-
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
@@ -33,7 +32,6 @@ def get_fruityvice_data(this_fruit_choice):
    fruityvice_normalized = pandas.json_normalized(fruityvice_response.json())
    return fruityvice_normalized
 
-
 # New Section to display fruityvice api response
 streamlit.header("Fruityvice Fruit Advice!")
 try:
@@ -47,6 +45,7 @@ try:
          
 except URLError as e:
     streamlit.error()
+      
 streamlit.header("View Our Fruit List - Add Your Favorites! ")
 # Snowflake-related functions
 def get_fruit_load_list():
@@ -61,24 +60,6 @@ if streamlit.button('Get Fruit Load List'):
     my_cnx.close()
     streamlit.dataframe(my_data_rows)
    
-# my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-# my_data_row = my_cur.fetchone()
-# my_data_rows = my_cur.fetchall()
-
-# streamlit.text("Hello from Snowflake:")
-# streamlit.text("The fruit load list contains:")
-
-# streamlit.text(my_data_row)
-# streamlit.dataframe(my_data_row)
-# streamlit.dataframe(my_data_rows)
-
-
-
-#streamlit.write('The user entered ', add_my_fruit)
-
-streamlit.write('Thanks for adding ', add_my_fruit)
-# my_cur.execute("insert into fruit_load_list values ('from streamlit')");
-
 #Allow the end user to add a fruit to the list
 def insert_row_snowflake(new_fruit):
     with my_cnx.cursor() as my_cur:
